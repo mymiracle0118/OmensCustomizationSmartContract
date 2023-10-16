@@ -1,0 +1,502 @@
+{
+  "version": "0.1.0",
+  "name": "solana_anchor",
+  "instructions": [
+    {
+      "name": "initPool",
+      "accounts": [
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "receiver",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "rand",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "bump",
+          "type": "u8"
+        },
+        {
+          "name": "traitPrice",
+          "type": "u64"
+        },
+        {
+          "name": "fitPrice",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "initState",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "state",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "bump",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "buyTrait",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "state",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "srcTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "destTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "traitType",
+          "type": "string"
+        },
+        {
+          "name": "traitValue",
+          "type": "string"
+        },
+        {
+          "name": "price",
+          "type": "u64"
+        },
+        {
+          "name": "limit",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "fitTraitRequire",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "state",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "srcTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "destTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "traitType",
+          "type": "string"
+        },
+        {
+          "name": "traitValue",
+          "type": "string"
+        },
+        {
+          "name": "price",
+          "type": "u64"
+        },
+        {
+          "name": "limit",
+          "type": "u64"
+        },
+        {
+          "name": "traitIndex",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "fitTrait",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "traitRequestor",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "state",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "traitType",
+          "type": "string"
+        },
+        {
+          "name": "traitValue",
+          "type": "string"
+        },
+        {
+          "name": "traitIndex",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "test",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "testFlag",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "claim",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "poolAddress",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "srcTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "destTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Pool",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "payer",
+            "type": "publicKey"
+          },
+          {
+            "name": "receiver",
+            "type": "publicKey"
+          },
+          {
+            "name": "rand",
+            "type": "publicKey"
+          },
+          {
+            "name": "tokenMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "traitPrice",
+            "type": "u64"
+          },
+          {
+            "name": "fitPrice",
+            "type": "u64"
+          },
+          {
+            "name": "testFlag",
+            "type": "bool"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "State",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "publicKey"
+          },
+          {
+            "name": "pool",
+            "type": "publicKey"
+          },
+          {
+            "name": "traitType",
+            "type": {
+              "vec": "string"
+            }
+          },
+          {
+            "name": "traitValue",
+            "type": {
+              "vec": "string"
+            }
+          },
+          {
+            "name": "traitRequire",
+            "type": "bytes"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "TokenMintToFailed",
+      "msg": "Token mint to failed"
+    },
+    {
+      "code": 6001,
+      "name": "TokenSetAuthorityFailed",
+      "msg": "Token authority failed"
+    },
+    {
+      "code": 6002,
+      "name": "TokenTransferFailed",
+      "msg": "Token transfer failed"
+    },
+    {
+      "code": 6003,
+      "name": "InvalidTokenAccount",
+      "msg": "Invalid token account"
+    },
+    {
+      "code": 6004,
+      "name": "InvalidTokenMint",
+      "msg": "Invalid token mint"
+    },
+    {
+      "code": 6005,
+      "name": "InvalidMetadata",
+      "msg": "Invalid metadata"
+    },
+    {
+      "code": 6006,
+      "name": "SolTransferFailed",
+      "msg": "Sol transfer failed"
+    },
+    {
+      "code": 6007,
+      "name": "TraitOverflow",
+      "msg": "Trait overflow"
+    },
+    {
+      "code": 6008,
+      "name": "InvalidStateAccount",
+      "msg": "Invalid State Account"
+    },
+    {
+      "code": 6009,
+      "name": "InvalidTraitPrice",
+      "msg": "Invalid Trait Price"
+    },
+    {
+      "code": 6010,
+      "name": "InvalidTraitType",
+      "msg": "Invalid Trait Type"
+    },
+    {
+      "code": 6011,
+      "name": "InvalidTraitValue",
+      "msg": "Invalid Trait Value"
+    },
+    {
+      "code": 6012,
+      "name": "InvalidTraitIndex",
+      "msg": "Invalid Trait Index"
+    },
+    {
+      "code": 6013,
+      "name": "InvalidTraitRequestor",
+      "msg": "Invalid Trait Requestor"
+    },
+    {
+      "code": 6014,
+      "name": "InvalidTraitRequreIndex",
+      "msg": "Invalid Trait Require Index"
+    },
+    {
+      "code": 6015,
+      "name": "InvalidPoolOwner",
+      "msg": "Invalid Owner"
+    },
+    {
+      "code": 6016,
+      "name": "NotMatchTraitType",
+      "msg": "Not Match Trait Type"
+    },
+    {
+      "code": 6017,
+      "name": "NotMatchTraitValue",
+      "msg": "Not Match Trait Value"
+    },
+    {
+      "code": 6018,
+      "name": "InsufficentFunds",
+      "msg": "Insufficent Funds"
+    }
+  ]
+}

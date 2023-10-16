@@ -1,0 +1,20 @@
+{
+	"token" : "sou1ELxm3XpLWpnjP81KaoigPPCwbNUFAZ4dhqifq13",
+	"staking_period" : 5,
+	"withdraw_period" : 2,
+	"hvh_percent" : 80,
+	"soldier_percent" : 15,
+	"win_percent" : 80,
+	"lose_percent" : 20,
+	"burn_percent" : 5,
+	"win_team_stake" : 10,
+	"lost_team_stake" : 5,
+	"token_unit" : 1000000,
+	"soul_amount" : 5,
+	"hvh_symbol" : "HH",
+	"soldier_symbol" : "HvHCIS",
+	"token_halos" : "Halos",
+	"token_horns" : "Horns",
+	"start_time" : 1647226800,
+	"period" : 86400
+}

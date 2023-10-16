@@ -1,0 +1,44 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "init": "ts-node src/index.ts init_pool -k ./id.json -i ./info_test.json",
+    "test": "ts-node src/index.ts test -k ./id.json -i ./info_test.json",
+    "initstate": "ts-node src/index.ts initstate -k ./id.json",
+    "buytrait": "ts-node src/index.ts buytrait -k ./id.json -i ./info_test.json",
+    "fitrequire": "ts-node src/index.ts fit_trait_require -k ./id.json -i ./info_test.json",
+    "claim": "ts-node src/index.ts claim -k ./id.json -i ./info_test.json",
+    "fit": "ts-node src/index.ts fit_trait -k ./id.json -i ./info_test.json",
+    "getpool": "ts-node src/index.ts get_pool",
+    "getstate": "ts-node src/index.ts get_state -k ./id.json",
+    "stake": "ts-node src/index.ts stake -k ./id.json -i ./info.json",
+    "getnft": "ts-node src/index.ts get_nft -k ./id_test.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@metaplex/js": "^4.12.0",
+    "@project-serum/anchor": "^0.17.1-beta.1",
+    "@solana/spl-token": "^0.1.8",
+    "@solana/web3.js": "^1.29.2",
+    "assert": "^2.0.0",
+    "axios": "^0.26.0",
+    "bip32": "^3.0.1",
+    "bs58": "^4.0.1",
+    "commander": "^8.3.0",
+    "figlet": "^1.5.2",
+    "fs": "^0.0.1-security",
+    "log4js": "^6.3.0",
+    "loglevel": "^1.8.0",
+    "moment": "^2.29.1",
+    "path": "^0.12.7",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "@types/bs58": "^4.0.1"
+  },
+  "description": ""
+}
